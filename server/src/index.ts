@@ -2,6 +2,7 @@ import express from 'express'
 import cors from 'cors'
 import dotenv from 'dotenv'
 import './db/pool'
+import authRoutes from './routes/auth'
 
 dotenv.config()
 
@@ -14,6 +15,8 @@ app.use(express.json())
 app.get('/api/health', (req, res) => {
   res.json({ ok: true, timestamp: new Date().toISOString() })
 })
+
+app.use('/api/auth', authRoutes)
 
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`)
