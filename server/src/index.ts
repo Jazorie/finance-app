@@ -8,6 +8,7 @@ import transactionRoutes from './routes/transactions'
 import categoryRoutes from './routes/categories'
 import goalRoutes from './routes/goals'
 import financedRoutes from './routes/financed'
+import insightsRoutes from './routes/insights'
 
 dotenv.config()
 
@@ -27,6 +28,7 @@ app.use('/api/transactions', transactionRoutes)
 app.use('/api/categories', categoryRoutes)
 app.use('/api/goals', goalRoutes)
 app.use('/api/financed', financedRoutes)
+app.use('/api/insights', insightsRoutes)
 
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`)
