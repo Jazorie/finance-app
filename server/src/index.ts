@@ -4,6 +4,8 @@ import dotenv from 'dotenv'
 import './db/pool'
 import authRoutes from './routes/auth'
 import accountRoutes from './routes/accounts'
+import transactionRoutes from './routes/transactions'
+import categoryRoutes from './routes/categories'
 
 dotenv.config()
 
@@ -19,6 +21,8 @@ app.get('/api/health', (req, res) => {
 
 app.use('/api/auth', authRoutes)
 app.use('/api/accounts', accountRoutes)
+app.use('/api/transactions', transactionRoutes)
+app.use('/api/categories', categoryRoutes)
 
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`)
